@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-users
+      author: vik
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: email, value: "manager@example.com" }
+              - column: { name: password, value: "$2a$10$yKRVgk0Xz.kOcFILvBchgOZHmM4SzX8YuxDA/ewOyuLQsLOln/SIu" }
+              - column: { name: first_name, value: "Manager" }
+              - column: { name: last_name, value: "Manager" }
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: email, value: "customer@example.com" }
+              - column: { name: password, value: "$2a$10$yKRVgk0Xz.kOcFILvBchgOZHmM4SzX8YuxDA/ewOyuLQsLOln/SIu" }
+              - column: { name: first_name, value: "Customer" }
+              - column: { name: last_name, value: "Customer" }

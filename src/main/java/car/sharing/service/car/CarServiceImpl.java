@@ -1,7 +1,7 @@
-package car.sharing.service;
+package car.sharing.service.car;
 
-import car.sharing.dto.CarRequestDto;
-import car.sharing.dto.CarResponseDto;
+import car.sharing.dto.car.CarRequestDto;
+import car.sharing.dto.car.CarResponseDto;
 import car.sharing.exception.EntityNotFoundException;
 import car.sharing.mapper.CarMapper;
 import car.sharing.model.Car;
@@ -9,6 +9,7 @@ import car.sharing.repository.CarRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -34,6 +35,7 @@ public class CarServiceImpl implements CarService {
         return carMapper.toDto(getCarById(id));
     }
 
+    @Transactional
     @Override
     public CarResponseDto updateCar(Long id, CarRequestDto carRequestDto) {
         getCarById(id);
