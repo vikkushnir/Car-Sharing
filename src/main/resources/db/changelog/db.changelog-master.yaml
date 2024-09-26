@@ -11,4 +11,8 @@ databaseChangeLog:
       file: db/changelog/changes/05-create-cars-table.yaml
   - include:
       file: db/changelog/changes/06-create-rentals-table.yaml
+  - include:
+      file: db/changelog/changes/07-insert-users-to-users-table.yaml
+  - include:
+      file: db/changelog/changes/08-assign-roles-to-users.yaml
 

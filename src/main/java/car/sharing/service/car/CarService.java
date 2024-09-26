@@ -1,4 +1,4 @@
-package car.sharing.service;
+package car.sharing.service.car;
 
 import car.sharing.dto.CarRequestDto;
 import car.sharing.dto.CarResponseDto;

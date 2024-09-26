@@ -1,4 +1,4 @@
-package car.sharing.service;
+package car.sharing.service.car;
 
 import car.sharing.dto.CarRequestDto;
 import car.sharing.dto.CarResponseDto;
@@ -9,6 +9,7 @@ import car.sharing.repository.CarRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -34,6 +35,7 @@ public class CarServiceImpl implements CarService {
         return carMapper.toDto(getCarById(id));
     }
 
+    @Transactional
     @Override
     public CarResponseDto updateCar(Long id, CarRequestDto carRequestDto) {
         getCarById(id);
@@ -41,6 +43,7 @@ public class CarServiceImpl implements CarService {
         Car car = carMapper.toModel(carRequestDto);
         car.setId(id);
         return carMapper.toDto(carRepository.save(car));
+
     }
 
     @Override

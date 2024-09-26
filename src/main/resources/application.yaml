@@ -20,3 +20,8 @@ spring:
             org.hibernate: DEBUG
             org.hibernate.type: TRACE
             org.springframework: DEBUG
+
+jwt:
+  secret: ${SECRET_KEY}
+  expiration: ${EXPIRATION_TIME}
+

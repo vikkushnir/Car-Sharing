@@ -2,10 +2,11 @@ package car.sharing.controller;
 
 import car.sharing.dto.CarRequestDto;
 import car.sharing.dto.CarResponseDto;
-import car.sharing.service.CarService;
+import car.sharing.service.car.CarService;
 import jakarta.validation.Valid;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,6 +38,7 @@ public class CarController {
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('MANAGER')")
     public CarResponseDto updateById(@PathVariable Long id,
                                      @RequestBody @Valid CarRequestDto requestDto) {
         return carService.updateCar(id, requestDto);
