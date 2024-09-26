@@ -11,8 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AuthenticationServiceImpl
-        implements AuthenticationService {
+public class AuthenticationServiceImpl implements AuthenticationService {
     private final JwtUtil jwtUtil;
     private final AuthenticationManager authenticationManager;
 
@@ -20,8 +19,7 @@ public class AuthenticationServiceImpl
     public UserLoginResponseDto authenticate(UserLoginRequestDto requestDto) {
         final Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        requestDto.getEmail(), requestDto.getPassword())
-        );
+                        requestDto.getEmail(), requestDto.getPassword()));
 
         String token = jwtUtil.generateToken(authentication.getName());
         UserLoginResponseDto responseDto = new UserLoginResponseDto();

@@ -61,6 +61,5 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
         body.put(STATUS, status);
         body.put(ERRORS, errors);
         return new ResponseEntity<>(body, status);
-
     }
 }

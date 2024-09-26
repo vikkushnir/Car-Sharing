@@ -1,7 +1,7 @@
 package car.sharing.controller;
 
-import car.sharing.dto.CarRequestDto;
-import car.sharing.dto.CarResponseDto;
+import car.sharing.dto.car.CarRequestDto;
+import car.sharing.dto.car.CarResponseDto;
 import car.sharing.service.car.CarService;
 import jakarta.validation.Valid;
 import java.util.List;

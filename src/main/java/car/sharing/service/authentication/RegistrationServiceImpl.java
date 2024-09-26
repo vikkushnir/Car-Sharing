@@ -28,8 +28,8 @@ public class RegistrationServiceImpl
         if (userRepository.findByEmail(requestDto.getEmail()).isPresent()) {
             throw new RegistrationException("Can't register user with this email: "
                     + requestDto.getEmail() + " is already exists");
-
         }
+
         User user = userMapper.toModel(requestDto);
         user.setPassword(passwordEncoder.encode(requestDto.getPassword()));
         user.setRoles(Set.of(

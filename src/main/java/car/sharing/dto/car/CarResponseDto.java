@@ -1,4 +1,4 @@
-package car.sharing.dto;
+package car.sharing.dto.car;
 
 import java.math.BigDecimal;
 import lombok.Data;

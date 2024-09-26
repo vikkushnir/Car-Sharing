@@ -1,7 +1,7 @@
 package car.sharing.service.car;
 
-import car.sharing.dto.CarRequestDto;
-import car.sharing.dto.CarResponseDto;
+import car.sharing.dto.car.CarRequestDto;
+import car.sharing.dto.car.CarResponseDto;
 import java.util.List;
 
 public interface CarService {
@@ -14,5 +14,4 @@ public interface CarService {
     CarResponseDto updateCar(Long id, CarRequestDto carRequestDto);
 
     void deleteById(Long id);
-
 }

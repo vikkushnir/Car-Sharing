@@ -42,5 +42,4 @@ public class UserController {
     ) {
         return userService.updateProfile(user.getId(), updateProfileDto);
     }
-
 }

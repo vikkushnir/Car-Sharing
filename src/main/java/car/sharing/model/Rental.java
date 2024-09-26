@@ -44,6 +44,4 @@ public class Rental {
 
     @Column(nullable = false)
     private boolean isDeleted;
-
-
 }

@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JwtUtil {
-
     @Value("${jwt.expiration}")
     private long expiration;
 
@@ -31,7 +30,6 @@ public class JwtUtil {
                 .expiration(new Date(System.currentTimeMillis() + expiration))
                 .signWith(secret)
                 .compact();
-
     }
 
     public boolean isValidToken(String token) {

@@ -1,7 +1,7 @@
 package car.sharing.service.car;
 
-import car.sharing.dto.CarRequestDto;
-import car.sharing.dto.CarResponseDto;
+import car.sharing.dto.car.CarRequestDto;
+import car.sharing.dto.car.CarResponseDto;
 import car.sharing.exception.EntityNotFoundException;
 import car.sharing.mapper.CarMapper;
 import car.sharing.model.Car;
@@ -43,7 +43,6 @@ public class CarServiceImpl implements CarService {
         Car car = carMapper.toModel(carRequestDto);
         car.setId(id);
         return carMapper.toDto(carRepository.save(car));
-
     }
 
     @Override
