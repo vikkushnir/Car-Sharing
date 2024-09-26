@@ -1,0 +1,3 @@
+jwt:
+  secret: ahashcbaksjbchasbcjkasbckbasjckajsbclasnxnliiwnundcjaknckawbckabnsc
+  expiration: 5000000000000
